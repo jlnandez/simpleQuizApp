@@ -29,14 +29,14 @@ class ResultBox extends StatelessWidget {
             ),
             const SizedBox(height: 20.0,),
             CircleAvatar(
-              child: Text('$result/$questionLength',
-              style: TextStyle(fontSize: 30.00,),
-              ),
               radius : 60.0,
               backgroundColor: result == questionLength 
               ? correct : result < questionLength/2 
               ? incorrect : result == questionLength/2 
               ? Colors.yellow : Colors.blue,
+              child: Text('$result/$questionLength',
+              style: const TextStyle(fontSize: 30.00,),
+              ),
             ),
             const SizedBox(height: 10.0),
             Text(result == questionLength 

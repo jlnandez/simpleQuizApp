@@ -3,11 +3,11 @@ import 'package:flutter_application_1/constants.dart';
 
 
 class QuestionWidget extends StatelessWidget {
-  const QuestionWidget({Key? key, 
+  const QuestionWidget({super.key, 
   required this.question,
   required this.indexAction, 
   required this.totalQuestions
-  }) : super(key: key);
+  });
 
   final String question;
   final int indexAction;
