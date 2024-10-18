@@ -77,7 +77,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void checkAnswerAndUpdate(bool value){
-
     if(isAlreadySelected){
       return;
     }else{
@@ -85,7 +84,6 @@ class _HomeScreenState extends State<HomeScreen> {
         score ++;
         
       }
-
       setState(() {
         isPressed = true;
         isAlreadySelected = true;
@@ -93,7 +91,6 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
   
-
   void startOver() {
     setState(() {
       index = 0;
@@ -102,8 +99,6 @@ class _HomeScreenState extends State<HomeScreen> {
       isAlreadySelected = false;
     });
     Navigator.pop(context);
-
-
   }
 
   void closeApp() {
@@ -114,8 +109,6 @@ class _HomeScreenState extends State<HomeScreen> {
       isAlreadySelected = false;
     });
     SystemNavigator.pop();
-
-
   }
 
   @override
@@ -146,10 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             )
           ],
-      
-      
         ),
-      
         body: Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -193,15 +183,26 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       
-      
-      
-      
-      
       );
           }
 
         }else{
-          return const Center(child: CircularProgressIndicator() ,
+          return const Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(),
+                SizedBox(height: 20.0,),
+                Text(
+                  'Please wait while questions are loading...',
+                  style: TextStyle(
+                    //color: Theme.of(context)primaryColor,
+                    decoration: TextDecoration.none,
+                    fontSize: 18.0,
+                    ),
+                )
+              ],
+            ) ,
           );
         }
 
